@@ -11,10 +11,35 @@ export class AppComponent {
 
   cadastro = {nome: '', telefone: ''};
 
-  constructor(private cadastroRest: CadastroRestService) {}
+  pessoas: any;
+
+  constructor(private cadastroRest: CadastroRestService) {
+    this.list();
+  }
 
   public save() {
-    this.cadastroRest.save(this.cadastro).subscribe();
+    this.cadastroRest.save(this.cadastro).subscribe(r => {
+      this.list();
+      this.cadastro = {nome: '', telefone: ''};
+    });
+  }
+
+  public list() {
+
+    this.cadastroRest.list().subscribe( p => {
+      this.pessoas = p;
+      console.log(p);
+    });
+  }
+
+  public edit(linha) {
+    this.cadastro = linha;
+  }
+
+  public delete(linha) {
+    this.cadastroRest.delete(linha.id).subscribe(p => {
+      this.list();
+    });
   }
 
 }

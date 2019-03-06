@@ -20,5 +20,11 @@ export class CadastroRestService {
     return this.http.post(endpoint + 'pessoa/save', cadastro);
   }
 
+  list(): Observable<any> {
+    return this.http.get(endpoint + 'pessoa/list');
+  }
 
+  delete(id: any): Observable<any> {
+    return this.http.delete(endpoint + 'pessoa/delete/' + id);
+  }
 }
