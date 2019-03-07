@@ -12,6 +12,7 @@ public class Pessoa {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	//FIXME este nome n esta nos padroes
 	private String nome;
 	
 	private String telefone;
