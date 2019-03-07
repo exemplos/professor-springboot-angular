@@ -1,0 +1,23 @@
+<form>
+    Código: <input type="text" [(ngModel)]="produto.codigo" name="codigo"/> <br/>
+    Nome: <input type="text" [(ngModel)]="produto.nome" name="nome"/> <br/>
+    Valor: <input type="text" [(ngModel)]="produto.valor" name="telefone"/> <br/>
+    <button type="button" (click)="save();">Salvar</button>
+
+
+    <table>
+      <tr>
+          <td>Código</td><td>Nome</td><td>Valor</td>
+      </tr>
+      <tr *ngFor="let p of produtos">
+          <td>{{p.codigo}}</td><td>{{p.nome}}</td><td>{{p.valor}}</td>
+        <td>
+          <button type="button" (click)="edit(p);">Editar</button>
+        </td>
+        <td>
+          <button type="button" (click)="delete(p);">Excluir</button>
+        </td>
+      </tr>
+    </table>
+
+    </form>

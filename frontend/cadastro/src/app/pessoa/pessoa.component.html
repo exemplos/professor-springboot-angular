@@ -1,0 +1,22 @@
+<form>
+    Nome: <input type="text" [(ngModel)]="cadastro.nome" name="nome"/> <br/>
+    Telefone: <input type="text" [(ngModel)]="cadastro.telefone" name="telefone"/> <br/>
+    <button type="button" (click)="save();">Salvar</button>
+
+
+    <table>
+      <tr>
+        <td>Nome</td><td>Telefone</td>
+      </tr>
+      <tr *ngFor="let p of pessoas">
+        <td>{{p.nome}}</td><td>{{p.telefone}}</td>
+        <td>
+          <button type="button" (click)="edit(p);">Editar</button>
+        </td>
+        <td>
+          <button type="button" (click)="delete(p);">Excluir</button>
+        </td>
+      </tr>
+    </table>
+
+    </form>
