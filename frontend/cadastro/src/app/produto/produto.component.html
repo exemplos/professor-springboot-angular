@@ -1,23 +1,39 @@
 <form>
-    Código: <input type="text" [(ngModel)]="produto.codigo" name="codigo"/> <br/>
-    Nome: <input type="text" [(ngModel)]="produto.nome" name="nome"/> <br/>
-    Valor: <input type="text" [(ngModel)]="produto.valor" name="telefone"/> <br/>
-    <button type="button" (click)="save();">Salvar</button>
+  <div class = "form-group">
+    <!--
+    <label for="codigo" class="col-sm-2 control-label">Código</label>
+    <div class="col-sm-10">
+      <input id="codigo" type="text" [(ngModel)]="produto.codigo" name="codigo" class="form-control"/> <br/>
+    </div>
+    -->
+      <label for="codigo">Código</label>
+      <input id="codigo" type="text" [(ngModel)]="produto.codigo" name="codigo" class="form-control"/> <br/>
 
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" [(ngModel)]="produto.nome" name="nome" class="form-control"/> <br/>
 
-    <table>
-      <tr>
-          <td>Código</td><td>Nome</td><td>Valor</td>
-      </tr>
-      <tr *ngFor="let p of produtos">
-          <td>{{p.codigo}}</td><td>{{p.nome}}</td><td>{{p.valor}}</td>
-        <td>
-          <button type="button" (click)="edit(p);">Editar</button>
-        </td>
-        <td>
-          <button type="button" (click)="delete(p);">Excluir</button>
-        </td>
-      </tr>
-    </table>
+      <label for="valor">Valor</label>
+      <input id="valor" type="text" [(ngModel)]="produto.valor" name="valor" class="form-control"/> <br/>
+
+      <button type="button" (click)="save();" class="btn btn-block btn-primary">Salvar</button>
+
+      <div class="col-sm-12"></div>
+      <h3 class="box-title">Produtos</h3>
+      <table class="table table-bordered table-hover dataTable">
+        <tr role="row">
+            <th>Código</th><th>Nome</th><th>Valor</th>
+        </tr>
+        <tr *ngFor="let p of produtos" role="row">
+            <td>{{p.codigo}}</td><td>{{p.nome}}</td><td>{{p.valor}}</td>
+          <td>
+            <button type="button" (click)="edit(p);" class="btn btn-block btn-primary">Editar</button>
+          </td>
+          <td>
+            <button type="button" (click)="delete(p);" class="btn btn-block btn-primary">Excluir</button>
+          </td>
+        </tr>
+      </table>
+
+  </div>
 
     </form>
