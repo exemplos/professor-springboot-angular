@@ -1,11 +1,11 @@
 <section class="content-header">
     <h1>
-      Pessoa
+      Aluno
       <small>Control panel</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Pessoa</li>
+      <li class="active">Aluno</li>
     </ol>
   </section>
 
@@ -15,21 +15,24 @@
 
 <form>
     <div class = "form-group">
-        <label for="codigo">Nome</label>
-        <input type="text" [(ngModel)]="cadastro.nome" name="nome" class="form-control"/>
+        <label for="nome">Nome</label>
+        <input type="text" [(ngModel)]="aluno.nome" name="nome" class="form-control"/>
 
-        <label for="telefone">Telefone</label>
-        <input type="text" [(ngModel)]="cadastro.telefone" name="telefone" class="form-control"/>
+        <label for="cpf">CPF</label>
+        <input type="text" [(ngModel)]="aluno.cpf" name="cpf" class="form-control"/>
+
+        <label for="matricula">Matrícula</label>
+        <input type="text" [(ngModel)]="aluno.matricula" name="matricula" class="form-control"/>
 
         <button type="button" (click)="save();" class="btn btn-block btn-primary">Salvar</button>
 
-        <h3 class="box-title">Pessoas</h3>
+        <h3 class="box-title">Alunos</h3>
     <table class="table table-bordered table-hover dataTable">
       <tr>
-        <th>Nome</th><th>Telefone</th>
+        <th>Nome</th><th>CPF</th><th>Matrícula</th>
       </tr>
-      <tr *ngFor="let p of pessoas">
-        <td>{{p.nome}}</td><td>{{p.telefone}}</td>
+      <tr *ngFor="let a of alunos">
+        <td>{{a.nome}}</td><td>{{a.cpf}}</td><td>{{a.matricula}}</td>
         <td>
           <button type="button" (click)="edit(p);" class="btn btn-block btn-primary">Editar</button>
         </td>

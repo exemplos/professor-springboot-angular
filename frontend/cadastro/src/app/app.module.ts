@@ -8,18 +8,25 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PessoaComponent } from './pessoa/pessoa.component';
 import { ProdutoComponent } from './produto/produto.component';
+import { ROUTES } from './app.routes';
+import { RouterModule } from '@angular/router';
+import { AlunoComponent } from './aluno/aluno.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PessoaComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    AlunoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
